@@ -1,8 +1,14 @@
 from django.db import models
 
 class Marca(models.Model):
- Nome =models.CharField(max_length=50)
- Nacionalidade = models.CharField(max_length=50)
+ nome =models.CharField(max_length=50)
+ nacionalidade = models.CharField(max_length=50, null=True, blank=True)
 
  def _str_(self):
-  return self.Nome,self.Nacionalidade   
+  return self.nome,self
+ 
+class Categoria(models.Model):
+ descricao =models.CharField(max_length=100)
+
+ def _str_(self):
+  return self.descricao 
