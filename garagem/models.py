@@ -1,3 +1,8 @@
 from django.db import models
 
-# Create your models here.
+class Marca(models.Model):
+ Nome =models.CharField(max_length=50)
+ Nacionalidade = models.CharField(max_length=50)
+
+ def _str_(self):
+  return self.Nome,self.Nacionalidade   
