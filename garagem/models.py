@@ -5,7 +5,7 @@ class Marca(models.Model):
  nacionalidade = models.CharField(max_length=50, null=True, blank=True)
 
  def _str_(self):
-  return self.nome,self
+  return self.nome
  
 class Categoria(models.Model):
  descricao =models.CharField(max_length=100)
