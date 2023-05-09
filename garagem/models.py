@@ -30,6 +30,14 @@ class Cor(models.Model):
     class Meta:
         verbose_name_plural = 'Cores'
 
+class Modelo(models.Model):
+    descricao = models.Charfield(max_length=100)
+    marca = models.ForeignKey(
+        Marca , on_delete=models.PROTECT, related_name="modelo")
+    
+    def __str__(self):
+        return f"{self.descricao} | {self.marca}"         
+
 class Veiculo(models.Model):
     marca = models.ForeignKey(Marca, on_delete=models.PROTECT, related_name="veiculo")
     categoria = models.ForeignKey(Categoria, on_delete=models.PROTECT, related_name="veiculo")
