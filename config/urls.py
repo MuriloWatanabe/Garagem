@@ -3,14 +3,15 @@ from django.urls import path, include
 
 from rest_framework.routers import DefaultRouter
 
-from garagem.views import MarcaViewSet, CategoriaViewSet, CorViewSet, AcessorioViewSet, VeiculoViewSet
+from garagem.views import MarcaViewSet, CategoriaViewSet, CorViewSet, AcessorioViewSet, VeiculoViewSet , ModeloViewSet
 
 router = DefaultRouter()
+router.register(r"acessorios", AcessorioViewSet)
+router.register(r"categorias", CategoriaViewSet)
+router.register(r"cores", CorViewSet)
 router.register(r"marcas", MarcaViewSet)
-router.register(r"categoria", CategoriaViewSet)
-router.register(r"cor", CorViewSet)
-router.register(r"acessório", AcessorioViewSet)
-router.register(r"veículo", VeiculoViewSet)
+router.register(r"modelos", ModeloViewSet)
+router.register(r"veiculos", VeiculoViewSet)
 
 urlpatterns = [
     path("admin/", admin.site.urls),

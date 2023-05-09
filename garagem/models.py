@@ -31,7 +31,7 @@ class Cor(models.Model):
         verbose_name_plural = 'Cores'
 
 class Modelo(models.Model):
-    descricao = models.Charfield(max_length=100)
+    descricao = models.CharField(max_length=100)
     marca = models.ForeignKey(
         Marca , on_delete=models.PROTECT, related_name="modelo")
     
@@ -47,4 +47,4 @@ class Veiculo(models.Model):
     modelo = models.ForeignKey(Modelo, on_delete=models.PROTECT, related_name="veiculo")
 
     def __str__(self):
-        return f"Modelo:{self.modelo} - Cor:{self.cor} - Ano:{self.ano} -  Marca:{self.marca}"
+        return f"Modelo:{self.modelo} - Cor:{self.cor} - Ano:{self.ano} -  Marca:{self.marca} {self.id}"
