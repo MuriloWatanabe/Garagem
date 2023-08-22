@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "rest_framework",
     # "rest_framework_simplejwt",
     "corsheaders",
+    "uploader",
     "usuario",
     "garagem"
 ]
@@ -141,3 +142,8 @@ REST_FRAMEWORK = {
 }
     
 AUTH_USER_MODEL = "usuario.Usuario"
+
+MEDIA_URL = "http://localhost:8000/media/"
+MEDIA_ENDPOINT = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+FILE_UPLOAD_PERMISSIONS = 0o640
