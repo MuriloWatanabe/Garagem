@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "uploader",
     "drf_spectacular",
+    "django_extensions",
     "usuario",
     "garagem"
 ]
